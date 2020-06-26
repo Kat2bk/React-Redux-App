@@ -2,14 +2,14 @@ import React, { useEffect } from "react";
 import {connect} from "react-redux";
 import {getInfo} from "./actions";
 
-const SunFacts = ({}) => {
+const SunFacts = () => {
     useEffect(() => {
         getInfo();
-    }, [getInfo]);
+    }, []);
 
-    if (isFetching) {
-        return <h1>LOADING</h1>;
-    }
+    // if (isFetching) {
+    //     return <h1>LOADING</h1>;
+    // }
 
 
     return (
@@ -21,5 +21,12 @@ const SunFacts = ({}) => {
     )
 }
 
+const mapStateToProps = state => {
+    return {
+        isFetching: state.isFetching,
+        error: state.error,
+        info: state.info
+    }
+}
 
 export default connect(mapStateToProps, {getInfo})(SunFacts);
