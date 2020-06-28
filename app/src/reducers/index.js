@@ -1,9 +1,10 @@
 import {FETCHING_START, FETCHING_SUCCESS, FETCHING_FAILURE} from "../actions";
 
 const initialState = {
-    info: null,
+    info: [],
     isFetching: false,
-    error: ""
+    error: "",
+    fetched: false
 }
 
 export const reducer = (state = initialState, action) => {
@@ -12,13 +13,13 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFetching: true,
-                error: ""
             }
         case FETCHING_SUCCESS:
             return {
                 ...state,
                 info: action.payload,
-                isFetching: false
+                isFetching: false,
+                fetched: true
             }
         case FETCHING_FAILURE:
             return {

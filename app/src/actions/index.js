@@ -10,11 +10,11 @@ export const FETCHING_FAILURE = "FETCHING_FAILURE";
 // };
 
 export const getInfo = () => dispatch => {
-    // dispatch({type: FETCHING_START});
+    dispatch({type: FETCHING_START});
     axios.get("https://api.pokemontcg.io/v1/cards")
     .then( response => {
         console.log(response);
-        // dispatch({type: FETCHING_SUCCESS, payload: response.data})
+        dispatch({type: FETCHING_SUCCESS, payload: response.data})
     })
     .catch(error => {
         console.log(error);
