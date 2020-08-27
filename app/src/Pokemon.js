@@ -1,6 +1,7 @@
 import React from "react";
 import { getInfo } from "./actions";
 import {connect} from "react-redux";
+import "./index.css";
 
 function Pokemon(props) {
     console.log("props from Pokemon.js", props);
@@ -30,7 +31,7 @@ function Pokemon(props) {
             <h3>We're searching...</h3> )} 
            {props.fetched && (<div className="info">{[(props.info.cards)].map((item, index) => {
              return item.map(items => (
-                 <div>
+                 <div className="pokemon">
                 <p>Name: {items.name}</p>
                 </div>
             ))
