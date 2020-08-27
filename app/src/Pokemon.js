@@ -22,8 +22,6 @@ function Pokemon(props) {
             // })}
             // </p>
 
-    let pokemon;
-
     return (
         <div className="pokemon-container">
         <button onClick={getdata}>Catch 'em</button>
