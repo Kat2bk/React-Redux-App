@@ -31,6 +31,7 @@ function Pokemon(props) {
              return item.map(items => (
                  <div className="pokemon">
                 <p>Name: {items.name}</p>
+                <img src={items.imageUrl} />
                 </div>
             ))
              })
